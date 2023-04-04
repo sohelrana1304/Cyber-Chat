@@ -24,9 +24,9 @@ import ScrollableChat from "./ScrollableChat";
 // import animationData from "../animations/typing.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { BaseURL } from "../helpers/BaseURL";
 
 import { io } from "socket.io-client";
-import { BaseURL } from "../helpers/BaseURL";
 const ENDPOINT = `${BaseURL}`;
 let socket, selectedChatCompare;
 
@@ -72,7 +72,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `/api/messages/${selectedChat._id}`,
+        `${BaseURL}/api/messages/${selectedChat._id}`,
         config
       );
 
@@ -107,8 +107,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     selectedChatCompare = selectedChat;
   }, [selectedChat]);
 
-  console.log(notification);
-
   useEffect(() => {
     socket.on("message recieved", (newMessageReceived) => {
       if (
@@ -139,7 +137,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "/api/messages",
+          `${BaseURL}/api/messages`,
           {
             content: newMessage,
             chatId: selectedChat._id,
