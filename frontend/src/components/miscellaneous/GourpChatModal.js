@@ -18,6 +18,7 @@ import { ChatState } from "../Context/ChatProvider";
 import axios from "axios";
 import UserListItem from "../UserAvatar/UserListItem";
 import UserBadgeItem from "../UserAvatar/UserBadgeItem";
+import { BaseURL } from "../../helpers/BaseURL";
 
 const GourpChatModal = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -78,7 +79,7 @@ const GourpChatModal = ({ children }) => {
         },
       };
       const { data } = await axios.post(
-        `/api/chat/group`,
+        `${BaseURL}/api/chat/group`,
         {
           name: groupChatName,
           users: JSON.stringify(selectedUsers.map((u) => u._id)),

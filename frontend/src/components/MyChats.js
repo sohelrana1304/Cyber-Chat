@@ -6,6 +6,7 @@ import { getSender } from "../Config/ChatLogic";
 import ChatLoading from "./ChatLoading";
 import { ChatState } from "./Context/ChatProvider";
 import GourpChatModal from "./miscellaneous/GourpChatModal";
+import { BaseURL } from "../helpers/BaseURL";
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
@@ -23,7 +24,7 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
 
-      const { data } = await axios.get(`/api/chat`, config);
+      const { data } = await axios.get(`${BaseURL}/api/chat`, config);
       // console.log(data)
       setChats(data);
     } catch (error) {

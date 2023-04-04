@@ -26,7 +26,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import { io } from "socket.io-client";
-const ENDPOINT = "https://cyber-chat-backend.onrender.com";
+import { BaseURL } from "../helpers/BaseURL";
+const ENDPOINT = `${BaseURL}`;
 let socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {

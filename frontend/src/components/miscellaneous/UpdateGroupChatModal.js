@@ -21,6 +21,7 @@ import { ChatState } from "../Context/ChatProvider";
 import UserBadgeItem from "../UserAvatar/UserBadgeItem";
 import axios from "axios";
 import UserListItem from "../UserAvatar/UserListItem";
+import { BaseURL } from "../../helpers/BaseURL";
 
 const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -109,7 +110,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
         },
       };
       const { data } = await axios.put(
-        `/api/chat/groupRemove`,
+        `${BaseURL}/api/chat/groupRemove`,
         {
           chatId: selectedChat._id,
           userId: user1._id,

@@ -1,0 +1,1 @@
+export const BaseURL = "https://cyber-chat-backend.onrender.com";

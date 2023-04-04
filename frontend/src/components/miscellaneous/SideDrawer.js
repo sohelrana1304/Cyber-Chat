@@ -34,6 +34,7 @@ import { getSender } from "../../Config/ChatLogic";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { SearchIcon } from "@chakra-ui/icons";
+import { BaseURL } from "../../helpers/BaseURL";
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");
@@ -80,7 +81,10 @@ const SideDrawer = () => {
         },
       };
 
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(
+        `${BaseURL}/api/user?search=${search}`,
+        config
+      );
 
       setLoading(false);
       setSearchResult(data);

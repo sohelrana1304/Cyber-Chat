@@ -9,9 +9,11 @@ import messageRoutes from "./routes/messageRoutes.js";
 // import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
 import createHttpError from "http-errors";
 import { Server } from "socket.io";
+import cors from "cors"
 
 connectDB();
 const app = express();
+app.use(cors())
 app.use(express.json());
 
 // Test APIs
