@@ -54,7 +54,8 @@ const serverPORT = app.listen(PORT, () => {
 const io = new Server(serverPORT, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://cyberchat-zow8.onrender.com",
+    // origin: "http://localhost:3000",
   },
 });
 
