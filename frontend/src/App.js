@@ -7,6 +7,7 @@ import HomePage from "./Pages/HomePage";
 import ChatPage from "./Pages/ChatPage";
 
 function App() {
+
   return (
     <div className="App">
       {/* <BrowserRouter> */}

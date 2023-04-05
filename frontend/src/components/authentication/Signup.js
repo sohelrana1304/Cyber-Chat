@@ -45,8 +45,8 @@ const Signup = () => {
     if (pics.type === "image/jpeg" || pics.type === "images/png") {
       const data = new FormData();
       data.append("file", pics);
-      data.append("upload_preset", "cyber-chat");
-      data.append("cloud_name", "djhyroqw6");
+      data.append("upload_preset", process.env.REACT_APP_PRESET_NAME);
+      data.append("cloud_name", process.env.REACT_APP_CLOUD_NAME);
       fetch("https://api.cloudinary.com/v1_1/djhyroqw6/image/upload", {
         method: "post",
         body: data,
@@ -82,7 +82,7 @@ const Signup = () => {
         isClosable: true,
         position: "bottom",
       });
-      setLoading(false)
+      setLoading(false);
       return;
     }
     if (password !== confirmPassword) {
@@ -124,10 +124,10 @@ const Signup = () => {
       setLoading(false);
       navigate("/chats");
     } catch (error) {
-      // console.log(error)
+      // console.log(error);
       toast({
         title: "Error Occured!",
-        description: error.message,
+        description: error.response.data,
         status: "error",
         duration: 5000,
         isClosable: true,

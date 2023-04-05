@@ -7,11 +7,6 @@ export const getSenderfull = (loggedUser, users) => {
 };
 
 export const isSameSender = (messages, m, i, userId) => {
-  // console.log("1", messages.length - 1)
-  // console.log("2", messages.length)
-  // console.log("1 : ", messages[i].sender._id);
-  // console.log("2 : ", m);
-  // console.log("3 : ", messages[i].sender._id);
 
   return (
    ( i < messages.length - 1 ) &&
@@ -22,8 +17,6 @@ export const isSameSender = (messages, m, i, userId) => {
 };
 
 export const isLastMessage = (messages, i, userId) => {
-  // console.log("1 : ", messages[messages.length - 1].sender._id);
-  // console.log("2 : ", userId);
   return (
     i === messages.length - 1 &&
     messages[messages.length - 1].sender._id !== userId &&

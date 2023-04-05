@@ -1,5 +1,5 @@
 import * as dotenv from "dotenv";
-dotenv.config({ path: "../.env" });
+dotenv.config();
 import express from "express";
 import { chats } from "./data/data.js";
 import connectDB from "./config/dbConfig.js";
@@ -46,7 +46,6 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 4000;
-// console.log('PORT: ', PORT);
 const serverPORT = app.listen(PORT, () => {
   console.log(`Server is running on PORT : ${PORT}`);
 });
