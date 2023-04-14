@@ -1,7 +1,7 @@
 # Cyber Chat
 
 ## To start setting up the project
-This is a full-stack MERN application that allows users to create, read, update and delete notes. The application has a user authentication system that allows users to sign up and log in. Once logged in, users can create notes with a title and body. They can also edit and delete their notes. The application has a search feature that allows users to search for notes by title or body. The application also has a responsive design that works well on both desktop and mobile devices.
+The MERN chat application is a real-time messaging platform that enables users to communicate with each other through chat rooms. The application is built using the MERN stack, which includes MongoDB, Express.js, React, and Node.js. The front-end interface is designed using React, while the back-end is powered by Node.js and Express.js, which manages the server and RESTful API. MongoDB, a NoSQL database, is used to store chat data. The application features a user authentication system, allowing users to create and login to their accounts. Users can create chat rooms, join existing ones, and chat with other users in real-time using Socket.io, a popular JavaScript library that enables real-time, bi-directional communication between clients and servers. The application is fully responsive, making it accessible on all devices, including smartphones, tablets, and desktop computers. Overall, the MERN chat application with Socket.io integration is a robust and effective platform for real-time communication between users.
 
 #### Live URL - https://cyberchat-zow8.onrender.com/
 
